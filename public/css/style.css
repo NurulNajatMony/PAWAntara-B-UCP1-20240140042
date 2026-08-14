@@ -1,0 +1,99 @@
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  /* Warm Pastel Theme Palette */
+  --primary-color: #3E2723; /* Dark brown for primary actions/text */
+  --hero-bg: #8C6254; /* Dusty rose / Terracotta */
+  --body-bg: #F9F1EE; /* Soft off-white */
+  --card-bg-1: #F2E6DF; /* Light warm beige */
+  --card-bg-2: #D7CCC8; /* Muted chocolate */
+  --card-bg-3: #E8E0EC; /* Soft lavender */
+  --border-radius: 20px;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--body-bg);
+  color: var(--primary-color);
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* Override Bootstrap Colors */
+.bg-primary {
+  background-color: var(--hero-bg) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  border-radius: 50rem; /* Pill shape */
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: #2D1E1B;
+  border-color: #2D1E1B;
+}
+
+.navbar {
+  background-color: var(--hero-bg) !important;
+  box-shadow: none;
+}
+
+.navbar-brand, .nav-link {
+  color: #fff !important;
+}
+
+/* Custom Hero Section */
+.hero-section {
+  background-color: var(--hero-bg);
+  color: white;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  padding: 4rem 0;
+  margin-bottom: 2rem;
+}
+
+.hero-section h1 {
+  color: white;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Product Cards */
+.product-card:nth-child(3n+1) .card {
+  background-color: var(--card-bg-1);
+}
+.product-card:nth-child(3n+2) .card {
+  background-color: var(--card-bg-2);
+}
+.product-card:nth-child(3n+3) .card {
+  background-color: var(--card-bg-3);
+}
+
+.chat-bubble {
+  border-radius: var(--border-radius);
+}
+
+.footer-custom {
+  background-color: transparent !important;
+  border-top: 1px solid rgba(62, 39, 35, 0.1) !important;
+}
