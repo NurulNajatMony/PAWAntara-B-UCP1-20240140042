@@ -18,6 +18,8 @@ router.post('/', (req, res) => {
     reply = "Stok selalu kami update di halaman Produk. Silakan cek halaman Produk ya.";
   } else if (userMessage.includes("bayar") || userMessage.includes("pembayaran")) {
     reply = "Kami menerima pembayaran tunai (Cash) dan transfer Bank / QRIS.";
+  } else if (userMessage.includes("pesan") || userMessage.includes("prosedur") || userMessage.includes("alamat") || userMessage.includes("cara") || userMessage.includes("kirim")) {
+    reply = "Untuk pemesanan barang dan mengirimkan alamat pengiriman, silakan hubungi WhatsApp Ibu Aries di 0812-3456-7890. AI saat ini hanya dapat membantu info dasar toko.";
   }
 
   res.json({
