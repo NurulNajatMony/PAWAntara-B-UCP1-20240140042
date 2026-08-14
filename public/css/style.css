@@ -27,6 +27,7 @@
   --text-main: #f0f6fc;
   --text-muted: #8b949e;
   --border-radius: 12px;
+  color-scheme: dark;
 }
 
 body {
