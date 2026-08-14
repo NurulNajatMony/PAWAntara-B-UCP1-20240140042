@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const result = await res.json();
           
           if (res.ok && result.status === 'success') {
-            window.location.href = '/login';
+            window.location.href = '/';
           }
         } catch (err) {
           console.error(err);
