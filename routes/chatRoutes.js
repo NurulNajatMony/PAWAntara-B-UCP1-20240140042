@@ -20,6 +20,10 @@ router.post('/', (req, res) => {
     reply = "Kami menerima pembayaran tunai (Cash) dan transfer Bank / QRIS.";
   } else if (userMessage.includes("pesan") || userMessage.includes("prosedur") || userMessage.includes("alamat") || userMessage.includes("cara") || userMessage.includes("kirim")) {
     reply = "Untuk pemesanan barang dan mengirimkan alamat pengiriman, silakan hubungi WhatsApp Ibu Aries di 0812-3456-7890. AI saat ini hanya dapat membantu info dasar toko.";
+  } else if (userMessage.includes("makasih") || userMessage.includes("terima kasih") || userMessage.includes("ok") || userMessage.includes("baik") || userMessage.includes("sip")) {
+    reply = "Sama-sama! Senang bisa membantu. Ada lagi yang ingin ditanyakan?";
+  } else if (userMessage === "halo" || userMessage === "hai" || userMessage.includes("halo ") || userMessage.includes("hai ")) {
+    reply = "Halo! Selamat datang di Toko Sembako Ariesta. Ada yang bisa dibantu?";
   }
 
   res.json({
