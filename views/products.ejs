@@ -48,15 +48,15 @@
         if (result.status === 'success' && result.data.length > 0) {
           result.data.forEach(product => {
             const card = document.createElement('div');
-            card.className = 'col-md-4 mb-4 product-card';
+            card.className = 'col-md-4 mb-4';
             card.innerHTML = `
               <article class="card h-100 p-3">
-                <div class="card-body d-flex flex-column text-center">
-                  <h4 class="card-title mb-3">${product.name}</h4>
-                  <h6 class="card-subtitle mb-4" style="font-family: 'DM Sans'; opacity: 0.7;">${product.category}</h6>
-                  <p class="card-text mb-2 fs-5 fw-bold" style="font-family: 'DM Sans';">Rp ${product.price.toLocaleString('id-ID')}</p>
-                  <p class="card-text mb-4" style="font-family: 'DM Sans';">Stok: ${product.stock}</p>
-                  <a href="/produk/${product.id}" class="btn btn-primary mt-auto rounded-pill w-100">Detail</a>
+                <div class="card-body d-flex flex-column text-start">
+                  <h4 class="card-title mb-1">${product.name}</h4>
+                  <h6 class="card-subtitle mb-4 text-muted">${product.category}</h6>
+                  <p class="card-text mb-2 fs-5 fw-bold text-primary">Rp ${product.price.toLocaleString('id-ID')}</p>
+                  <p class="card-text mb-4 text-muted">Stok: ${product.stock}</p>
+                  <a href="/produk/${product.id}" class="btn btn-primary mt-auto">Details</a>
                 </div>
               </article>
             `;

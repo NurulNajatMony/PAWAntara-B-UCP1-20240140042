@@ -5,18 +5,18 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card shadow">
-        <div class="card-header bg-primary text-white text-center">
-          <h4 class="mb-0">Tanya AI Assistant</h4>
+        <div class="card-header border-bottom-0 py-3">
+          <h4 class="mb-0 text-primary">Tanya AI Assistant</h4>
         </div>
-        <div class="card-body" id="chat-box" style="height: 400px; overflow-y: auto; background-color: #f8f9fa;">
+        <div class="card-body" id="chat-box" style="height: 400px; overflow-y: auto;">
           <!-- Chat messages -->
           <div class="d-flex justify-content-start mb-3">
-            <div class="p-3 bg-white rounded shadow-sm" style="max-width: 75%;">
+            <div class="p-3 chat-bubble-ai rounded shadow-sm" style="max-width: 75%;">
               <p class="mb-0">Halo! Ada yang bisa saya bantu tentang produk, ongkir, stok, atau pembayaran?</p>
             </div>
           </div>
         </div>
-        <div class="card-footer">
+        <div class="card-footer border-top-0 py-3">
           <form id="chat-form" class="d-flex gap-2">
             <input type="text" id="chat-input" class="form-control" placeholder="Ketik pertanyaan Anda di sini..." required aria-label="Pesan">
             <button type="submit" class="btn btn-primary" id="chat-btn">Kirim</button>
@@ -41,7 +41,7 @@
       const msgDiv = document.createElement('div');
       msgDiv.className = `d-flex justify-content-${isUser ? 'end' : 'start'} mb-3`;
       msgDiv.innerHTML = `
-        <div class="p-3 rounded shadow-sm ${isUser ? 'bg-primary text-white' : 'bg-white text-dark'}" style="max-width: 75%;">
+        <div class="p-3 rounded shadow-sm ${isUser ? 'chat-bubble-user' : 'chat-bubble-ai'}" style="max-width: 75%;">
           <p class="mb-0">${message}</p>
         </div>
       `;
