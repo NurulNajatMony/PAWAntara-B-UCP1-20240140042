@@ -1,6 +1,22 @@
 /* Custom Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* Modal styling for dark theme */
+.modal-content {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-main);
+}
+.modal-header {
+  border-bottom: 1px solid var(--card-border);
+}
+.modal-footer {
+  border-top: 1px solid var(--card-border);
+}
+.btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
 :root {
   /* Premium Dark Theme Palette */
   --body-bg: #0b0f13;
