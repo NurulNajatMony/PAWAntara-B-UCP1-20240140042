@@ -1,0 +1,71 @@
+<%- include("partials/head", { title: 'Login - Toko Sembako Ariesta' }) %>
+<%- include("partials/navbar") %>
+
+<main class="container flex-grow-1 d-flex justify-content-center align-items-center">
+  <div class="card shadow-sm" style="width: 100%; max-width: 400px;">
+    <div class="card-body p-4">
+      <h3 class="text-center mb-4">Login Admin</h3>
+      <form id="login-form">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100" id="login-btn">Login</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<%- include("partials/footer") %>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.getElementById('login-form');
+    const loginBtn = document.getElementById('login-btn');
+
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(loginForm);
+      const data = Object.fromEntries(formData.entries());
+
+      if (!data.username || !data.password) {
+        Swal.fire('Error', 'Username dan password wajib diisi', 'error');
+        return;
+      }
+
+      loginBtn.disabled = true;
+      loginBtn.textContent = 'Memproses...';
+
+      try {
+        const res = await fetch('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+
+        if (res.ok && result.status === 'success') {
+          Swal.fire('Sukses', 'Login berhasil!', 'success').then(() => {
+            window.location.href = '/dashboard';
+          });
+        } else {
+          Swal.fire('Gagal', result.message || 'Login gagal', 'error');
+        }
+      } catch (err) {
+        console.error(err);
+        Swal.fire('Error', 'Terjadi kesalahan sistem', 'error');
+      } finally {
+        loginBtn.disabled = false;
+        loginBtn.textContent = 'Login';
+      }
+    });
+  });
+</script>
+</body>
+</html>
